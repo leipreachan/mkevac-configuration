@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/marko/micex/git/micex_octopus/modules'
+let g:netrw_dirhist_2='/home/marko/micex/git/micex_octopus/modules/octopus_sql'
+let g:netrw_dirhist_3='/home/marko/micex/git'
+let g:netrw_dirhist_4='/home/marko/micex/git/micex_octopus_iss'
+let g:netrw_dirhist_5='/home/marko/micex/git/micex_octopus_iss/src'
+let g:netrw_dirhist_6='/home/marko/micex/git/micex_octopus_iss'
+let g:netrw_dirhist_7='/home/marko/micex/git/micex_octopus_iss/src'
+let g:netrw_dirhist_8='/home/marko/micex/git/micex_octopus_iss'
+let g:netrw_dirhist_9='/home/marko/micex/git/micex_octopus_iss/src'
