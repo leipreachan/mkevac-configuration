@@ -64,28 +64,30 @@ set foldcolumn=5
 set foldmethod=syntax
 
 if has("autocmd")
+    filetype on
+
     au FileType helpfile set nonumber      " no line numbers when viewing help
     au FileType helpfile nnoremap <buffer><cr> <c-]>   " Enter selects subject
     au FileType helpfile nnoremap <buffer><bs> <c-T>   " Backspace to go back
-    
-    au FileType cpp,c set shiftwidth=4 tabstop=4 autoindent smartindent cindent cino=:0(0 textwidth=79
-    au FileType python set shiftwidth=4 tabstop=4 textwidth=79 foldmethod=indent
+
+    au FileType cpp,c set sw=4 ts=4 sts=4 autoindent smartindent cindent cino=:0(0 textwidth=79
+    au FileType python set sw=4 ts=4 sts=4 textwidth=79 foldmethod=indent
 
     au BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
     au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-    
-    au BufNewFile,BufRead  modprobe.conf set syntax=modconf
 
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType c set omnifunc=ccomplete#Complete
+    au BufNewFile,BufRead modprobe.conf set syntax=modconf
+
+    au FileType python set omnifunc=pythoncomplete#Complete
+    au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+    au FileType html set omnifunc=htmlcomplete#CompleteTags
+    au FileType css set omnifunc=csscomplete#CompleteCSS
+    au FileType xml set omnifunc=xmlcomplete#CompleteTags
+    au FileType php set omnifunc=phpcomplete#CompletePHP
+    au FileType c set omnifunc=ccomplete#Complete
 
     " highlight lines with width more than textwidth
-    autocmd BufNewFile,BufRead *.c exec 'match Todo /\%>' . &textwidth . 'v.\+/'
+    au BufNewFile,BufRead *.c exec 'match Todo /\%>' . &textwidth . 'v.\+/'
 
     " highlight trailing spaces
     au BufNewFile,BufRead * let b:mtrailingws=matchadd('ErrorMsg', '\s\+$', -1)
@@ -97,8 +99,8 @@ if has("autocmd")
     " Vala support
     au BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
     au BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-    au BufRead,BufNewFile *.vala            setfiletype vala
-    au BufRead,BufNewFile *.vapi            setfiletype vala
+    au BufRead,BufNewFile *.vala setfiletype vala
+    au BufRead,BufNewFile *.vapi setfiletype vala
 endif
 
 if has("gui_running")
