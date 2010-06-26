@@ -70,21 +70,21 @@ if has("autocmd")
     au FileType helpfile nnoremap <buffer><cr> <c-]>   " Enter selects subject
     au FileType helpfile nnoremap <buffer><bs> <c-T>   " Backspace to go back
 
-    au FileType cpp,c set sw=4 ts=4 sts=4 autoindent smartindent cindent cino=:0(0 textwidth=79
-    au FileType python set sw=4 ts=4 sts=4 textwidth=79 foldmethod=indent
+    au FileType cpp,c setlocal sw=4 ts=4 sts=4 autoindent smartindent cindent cino=:0(0 textwidth=79
+    au FileType python setlocal sw=4 ts=4 sts=4 textwidth=79 foldmethod=indent
 
-    au BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-    au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+    au BufRead *.py setlocal makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+    au BufRead *.py setlocal efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 
-    au BufNewFile,BufRead modprobe.conf set syntax=modconf
+    au BufNewFile,BufRead modprobe.conf setlocal syntax=modconf
 
-    au FileType python set omnifunc=pythoncomplete#Complete
-    au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    au FileType html set omnifunc=htmlcomplete#CompleteTags
-    au FileType css set omnifunc=csscomplete#CompleteCSS
-    au FileType xml set omnifunc=xmlcomplete#CompleteTags
-    au FileType php set omnifunc=phpcomplete#CompletePHP
-    au FileType c set omnifunc=ccomplete#Complete
+    au FileType python setlocal omnifunc=pythoncomplete#Complete
+    au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    au FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+    au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    au FileType php setlocal omnifunc=phpcomplete#CompletePHP
+    au FileType c setlocal omnifunc=ccomplete#Complete
 
     " highlight lines with width more than textwidth
     au BufNewFile,BufRead *.c exec 'match Todo /\%>' . &textwidth . 'v.\+/'
@@ -97,8 +97,8 @@ if has("autocmd")
     au BufNewFile,BufRead * let b:mtabaftersp=matchadd('ErrorMsg', '\v( +)\zs(\t+)', -1)
 
     " Vala support
-    au BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-    au BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+    au BufRead *.vala setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+    au BufRead *.vapi setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
     au BufRead,BufNewFile *.vala setfiletype vala
     au BufRead,BufNewFile *.vapi setfiletype vala
 endif
