@@ -64,28 +64,30 @@ set foldcolumn=5
 set foldmethod=syntax
 
 if has("autocmd")
+    filetype on
+
     au FileType helpfile set nonumber      " no line numbers when viewing help
     au FileType helpfile nnoremap <buffer><cr> <c-]>   " Enter selects subject
     au FileType helpfile nnoremap <buffer><bs> <c-T>   " Backspace to go back
-    
-    au FileType cpp,c set shiftwidth=4 tabstop=4 autoindent smartindent cindent cino=:0(0 textwidth=79
-    au FileType python set shiftwidth=4 tabstop=4 textwidth=79 foldmethod=indent
 
-    au BufRead *.py set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-    au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-    
-    au BufNewFile,BufRead  modprobe.conf set syntax=modconf
+    au FileType cpp,c setlocal sw=4 ts=4 sts=4 autoindent smartindent cindent cino=:0(0 textwidth=79
+    au FileType python setlocal sw=4 ts=4 sts=4 textwidth=79 foldmethod=indent
 
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType c set omnifunc=ccomplete#Complete
+    au BufRead *.py setlocal makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+    au BufRead *.py setlocal efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+
+    au BufNewFile,BufRead modprobe.conf setlocal syntax=modconf
+
+    au FileType python setlocal omnifunc=pythoncomplete#Complete
+    au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    au FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+    au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    au FileType php setlocal omnifunc=phpcomplete#CompletePHP
+    au FileType c setlocal omnifunc=ccomplete#Complete
 
     " highlight lines with width more than textwidth
-    autocmd BufNewFile,BufRead *.c exec 'match Todo /\%>' . &textwidth . 'v.\+/'
+    au BufNewFile,BufRead *.c exec 'match Todo /\%>' . &textwidth . 'v.\+/'
 
     " highlight trailing spaces
     au BufNewFile,BufRead * let b:mtrailingws=matchadd('ErrorMsg', '\s\+$', -1)
@@ -95,10 +97,10 @@ if has("autocmd")
     au BufNewFile,BufRead * let b:mtabaftersp=matchadd('ErrorMsg', '\v( +)\zs(\t+)', -1)
 
     " Vala support
-    au BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-    au BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
-    au BufRead,BufNewFile *.vala            setfiletype vala
-    au BufRead,BufNewFile *.vapi            setfiletype vala
+    au BufRead *.vala setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+    au BufRead *.vapi setlocal efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
+    au BufRead,BufNewFile *.vala setfiletype vala
+    au BufRead,BufNewFile *.vapi setfiletype vala
 endif
 
 if has("gui_running")
