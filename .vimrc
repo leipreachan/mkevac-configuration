@@ -103,7 +103,7 @@ endif
 
 if has("gui_running")
     " See ~/.gvimrc
-    set guifont=Droid\ Sans\ Mono\ 8 " use this font
+    set guifont=Monaco\ 9 " use this font
     set lines=50          " height = 50 lines
     set columns=120       " width = 100 columns
     set background=dark   " adapt colors for background
