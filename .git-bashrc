@@ -1,11 +1,6 @@
 #!/bin/bash
 
-export PATH="/home/marko/texlive/2008/bin/x86_64-linux:$PATH"
-export MANPATH="/home/marko/texlive/2008/texmf/doc/man:$MANPATH"
-export INFOPATH="/home/marko/texlive/2008/texmf/doc/info:$INFOPATH"
-
-
-source ~/.git-completion.sh
+#source ~/.git-completion.sh
 export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 export HISTCONTROL=ignoredups
 
