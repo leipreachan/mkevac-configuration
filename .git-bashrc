@@ -1,11 +1,11 @@
 #!/bin/bash
 
-export PATH="/home/marko/texlive/2008/bin/x86_64-linux:$PATH"
-export MANPATH="/home/marko/texlive/2008/texmf/doc/man:$MANPATH"
-export INFOPATH="/home/marko/texlive/2008/texmf/doc/info:$INFOPATH"
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+BLUE="\[\033[01;34m\]"
+WHITE="\[\033[00m\]"
 
-
-source ~/.git-completion.sh
-export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
-export HISTCONTROL=ignoredups
-
+PS1='$(date +%H:%M) \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]`__git_ps1` \$ '
+alias pfull="export PS1='$(date +%H:%M) \[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]`__git_ps1` \$ '"
+alias psmall="export PS1='$BLUE$(date +%H:%M) \w$YELLOW`__git_ps1`$GREEN \$ $WHITE'"
