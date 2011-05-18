@@ -277,3 +277,40 @@ document dump_servers
 end
 
 set print pretty on
+
+set prompt \033[36m\n(gdb)\033[1;37m> \033[0m
+
+shell mkfifo /tmp/gdb.colorPipe
+
+define hook-backtrace
+echo \033[33m
+end
+
+define hookpost-backtrace
+echo \033[0m\n
+end
+
+define hook-print
+echo \033[32m
+end
+
+define hookpost-print
+echo \033[0m\n
+end
+
+define hook-list
+echo \n
+shell cat /tmp/gdb.colorPipe | highlight -S cpp -O xterm256 &
+set logging redirect on
+set logging on /tmp/gdb.colorPipe
+end
+
+define hookpost-list
+set logging off
+set logging redirect off
+shell sleep 0.1s
+end
+
+define hook-quit
+shell rm /tmp/gdb.colorPipe
+end
