@@ -1,4 +1,4 @@
-set guifont=Pragmata\ Pro\ 10
+set guifont=PragmataPro:h12
 
 set ignorecase "Ignore case when searching
 set smartcase
