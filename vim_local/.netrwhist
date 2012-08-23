@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/private/tmp/badoo'
+let g:netrw_dirhist_2='/private/tmp/badoo/laccess.git'
+let g:netrw_dirhist_3='/private/tmp/badoo/laccess.git/src'
+let g:netrw_dirhist_4='/private/tmp/badoo'
+let g:netrw_dirhist_5='/private/tmp/badoo/laccess.git'
+let g:netrw_dirhist_6='/private/tmp/badoo/laccess.git/src'
+let g:netrw_dirhist_7='/Users/marko/badoo/laccess.git/waftools'

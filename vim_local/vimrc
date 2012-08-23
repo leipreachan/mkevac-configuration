@@ -1,3 +1,7 @@
+call pathogen#infect()
+
+set rtp+=/usr/local/Cellar/go/1.0.2/misc/vim
+
 try
     if MySys() == "mac"
         set guifont=PragmataPro:h12
@@ -15,18 +19,19 @@ set incsearch "Make search act like search in modern browsers
 set showmatch "Show matching bracets when text indicator is over them
 set mat=2 "How many tenths of a second to blink
 
-syntax enable "Enable syntax hl
+set wildmenu
+
+syntax enable
+filetype plugin indent on
+
+colorscheme desert
+set background=dark
+set t_Co=256
 
 set nu
 
 if has("gui_running")
   set guioptions-=T
-  set t_Co=256
-  set background=dark
-  colorscheme desert
-else
-  colorscheme desert
-  set background=dark
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,14 +57,22 @@ endtry
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set smarttab
+set noexpandtab                         " use tabs, not spaces
+set tabstop=8                           " tabstops of 8
+set shiftwidth=8                        " indents of 8
+set textwidth=158                       " screen in 80 columns wide, wrap at 158
 
-set linebreak
-set textwidth=500
+set autoindent smartindent              " turn on auto/smart indenting
+set smarttab                            " make <tab> and <backspace> smarter
+set backspace=eol,start,indent          " allow backspacing over indent, eol, & start
 
-set autoindent "Auto indent
-set smartindent "Smart indet
-set wrap "Wrap lines
+" SuperTab option for context aware completion
+let g:SuperTabDefaultCompletionType = "context"
+
+" Disable auto popup, use <Tab> to autocomplete
+let g:clang_complete_auto = 0
+" Show clang errors in the quickfix window
+let g:clang_complete_copen = 1
+
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'snipmate'
