@@ -1,10 +1,16 @@
 shopt -s histappend
 export HISTCONTROL=ignoreboth
+export HISTFILESIZE=100000
+export HISTSIZE=100000
 PROMPT_COMMAND='history -a'
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
-export PATH=$PATH:/usr/local/Cellar/go/1.0.2/bin/
-export GOPATH=$HOME/mygo
+export PATH=$PATH:/usr/local/Cellar/go/1.0.2/bin
 export PATH=$PATH:$HOME/mygo/bin
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 alias srsync="rsync --rsync-path=\"sudo rsync\""
+export LC_CTYPE=en_US.UTF-8
+
+export GOPATH=$HOME/Dropbox/projects/go:$GOPATH
+export PATH=$PATH:$HOME/Dropbox/projects/go/bin
+
 . ~/.git-bashrc
