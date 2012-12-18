@@ -1,6 +1,8 @@
 call pathogen#infect()
 
-set rtp+=/usr/local/Cellar/go/1.0.2/misc/vim
+set rtp+=$GOROOT/misc/vim
+
+let mapleader = ","
 
 try
     if MySys() == "mac"
