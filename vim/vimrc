@@ -4,14 +4,7 @@ set rtp+=$GOROOT/misc/vim
 
 let mapleader = ","
 
-try
-    if MySys() == "mac"
-        set guifont=PragmataPro:h12
-    else
-        set guifont=Pragmata\ Pro\ 10
-    endif
-catch
-endtry  
+set guifont=PragmataPro:h12
 
 set ignorecase "Ignore case when searching
 set smartcase
