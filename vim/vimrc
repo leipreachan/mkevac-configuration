@@ -79,3 +79,6 @@ let g:clang_use_library = 1
 let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
 let g:clang_complete_macros = 1
 let g:clang_complete_patterns = 1
+
+let NERDTreeIgnore = ['\.pyc$', '\.o$']
+
