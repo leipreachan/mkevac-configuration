@@ -87,5 +87,8 @@ endif
 let g:clang_complete_macros = 1
 let g:clang_complete_patterns = 1
 
-let NERDTreeIgnore = ['\.pyc$', '\.o$']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.lo$']
 
+set foldmethod=marker
+
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
