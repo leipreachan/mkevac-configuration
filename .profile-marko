@@ -11,7 +11,7 @@ alias srsync="rsync --rsync-path=\"sudo rsync\""
 export LC_CTYPE=en_US.UTF-8
 
 export GOROOT=$(brew --prefix go)
-export GOPATH=$HOME/Dropbox/projects/go:$GOPATH
+export GOPATH=$HOME/Dropbox/projects/go
 export PATH=$PATH:$HOME/Dropbox/projects/go/bin
 
 . ~/.git-bashrc
