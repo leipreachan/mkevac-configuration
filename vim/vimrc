@@ -4,7 +4,13 @@ set rtp+=$GOROOT/misc/vim
 
 let mapleader = ","
 
-set guifont=PragmataPro:h12
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Pragmata\ Pro\ 12
+  else
+    set guifont=PragmataPro:h12
+  endif
+endif
 
 set ignorecase "Ignore case when searching
 set smartcase
