@@ -11,3 +11,5 @@
 	keepBackup = true
 [grep]
 	lineNumber = true
+[branch]
+	autosetuprebase = always
