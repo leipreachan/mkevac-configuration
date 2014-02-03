@@ -2,9 +2,12 @@
 	name = Marko Kevac
 	email = marko@kevac.org
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = auto
-[url "git@svn.micex.ru:"]
-	insteadof = micex:
+	ui = true
+[core]
+	editor = /usr/bin/vim
+[push]
+	default = tracking
+[mergetool]
+	keepBackup = true
+[grep]
+	lineNumber = true
