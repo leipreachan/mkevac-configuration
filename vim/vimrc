@@ -1,6 +1,6 @@
 call pathogen#infect()
 
-set rtp+=$GOROOT/misc/vim
+set rtp+=/usr/local/opt/go/libexec/misc/vim/
 
 let mapleader = ","
 
