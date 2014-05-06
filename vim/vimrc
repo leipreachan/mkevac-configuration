@@ -72,3 +72,5 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.lo$']
 set foldmethod=marker
 
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
