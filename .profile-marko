@@ -9,6 +9,8 @@ fi
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
+alias bt="wget http://cachefly.cachefly.net/400mb.test"
+
 alias ll="ls -la"
 alias grep="grep --color"
 
