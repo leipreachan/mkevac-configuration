@@ -1,6 +1,32 @@
-call pathogen#infect()
+set nocompatible
+filetype off
 
-set rtp+=/usr/local/opt/go/libexec/misc/vim/
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'a.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'bling/vim-airline'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'fatih/vim-go'
+
+call vundle#end()
+filetype plugin indent on
+
+"set rtp+=/usr/local/opt/go/libexec/misc/vim/
 
 let mapleader = ","
 
@@ -23,7 +49,6 @@ set mat=2 "How many tenths of a second to blink
 set wildmenu
 
 syntax enable
-filetype plugin indent on
 
 colorscheme desert
 set background=dark
@@ -72,5 +97,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.lo$']
 set foldmethod=marker
 
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
+let g:UltiSnipsExpandTrigger="<c-j>"
