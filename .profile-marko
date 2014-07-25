@@ -31,8 +31,7 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
 alias srsync="rsync --rsync-path=\"sudo rsync\""
 export LC_CTYPE=en_US.UTF-8
 
-export GOPATH=$HOME/Dropbox/projects/go
-export PATH=$PATH:$HOME/Dropbox/projects/go/bin
+export PATH=$PATH:/usr/local/Cellar/go/1.3/libexec/bin
 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
