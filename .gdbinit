@@ -278,7 +278,7 @@ end
 
 set print pretty on
 
-set prompt \033[36m\n(gdb)\033[1;37m> \033[0m
+set prompt \001\033[1;32m\002(gdb)\001\033[0m\002\040]]
 
 shell mkfifo /tmp/gdb.colorPipe
 
