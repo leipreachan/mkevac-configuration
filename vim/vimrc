@@ -103,3 +103,5 @@ nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 nmap <F8> :TagbarToggle<CR>
+
+let g:go_fmt_command = "goimports"
