@@ -24,6 +24,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 
+Plugin 'hynek/vim-python-pep8-indent'
+
 call vundle#end()
 filetype plugin indent on
 
