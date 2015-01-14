@@ -31,6 +31,8 @@ filetype plugin indent on
 
 "set rtp+=/usr/local/opt/go/libexec/misc/vim/
 
+set dictionary+=/usr/share/dict/words
+
 let mapleader = ","
 
 if has("gui_running")
@@ -103,6 +105,9 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsExpandTrigger="<s-tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>""
 
 nmap <F8> :TagbarToggle<CR>
 
