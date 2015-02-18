@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'a.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
@@ -55,9 +56,10 @@ set wildmenu
 
 syntax enable
 
-colorscheme desert
 set background=dark
+colorscheme solarized
 set t_Co=256
+hi clear SignColumn
 
 set nu
 
@@ -97,12 +99,16 @@ set autoindent smartindent              " turn on auto/smart indenting
 set smarttab                            " make <tab> and <backspace> smarter
 set backspace=eol,start,indent          " allow backspacing over indent, eol, & start
 
+set hidden
+
 let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.lo$']
 
 set foldmethod=marker
 
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+let g:ycm_confirm_extra_conf = 0
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 "let g:UltiSnipsExpandTrigger="<s-tab>"
@@ -112,3 +118,16 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 nmap <F8> :TagbarToggle<CR>
 
 let g:go_fmt_command = "goimports"
+
+set wildignore+=*.o
+
+" Always show status line
+set laststatus=2
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+let g:gitgutter_highlight_lines = 1
