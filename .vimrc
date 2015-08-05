@@ -109,6 +109,7 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 "let g:UltiSnipsExpandTrigger="<s-tab>"
