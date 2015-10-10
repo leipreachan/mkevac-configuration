@@ -13,3 +13,5 @@
 	lineNumber = true
 [branch]
 	autosetuprebase = always
+[alias]
+	l = log --oneline --graph

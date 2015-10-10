@@ -25,10 +25,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 
-Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'klen/python-mode'
 
 call vundle#end()
 filetype plugin indent on
+
+set backupcopy=auto,breakhardlink
 
 "set rtp+=/usr/local/opt/go/libexec/misc/vim/
 
@@ -118,6 +120,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>""
 
 nmap <F8> :TagbarToggle<CR>
+autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 let g:tagbar_type_go = {  
     \ 'ctagstype' : 'go',
@@ -169,3 +172,5 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 
 let g:gitgutter_highlight_lines = 1
+
+let g:pymode_folding = 0
