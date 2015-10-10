@@ -51,4 +51,4 @@ export SMALL_PS1="$BLUE\w$WHITE`__git_ps1` \$ "
 export PS1=$FULL_PS1
 alias pfull='export PS1=$FULL_PS1'
 alias psmall='export PS1=$SMALL_PS1'
-
+alias maketags='ctags -R --fields=+l --langmap=c:.c.h'
