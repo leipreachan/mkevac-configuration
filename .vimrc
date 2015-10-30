@@ -28,6 +28,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'klen/python-mode'
 
 Plugin 'vasconcelloslf/vim-interestingwords'
+Plugin 'mustache/vim-mustache-handlebars'
 
 call vundle#end()
 filetype plugin indent on
