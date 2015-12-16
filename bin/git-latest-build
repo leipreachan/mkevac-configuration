@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git fetch --all
+git fetch --all --prune
 newbuild=$(git branch -a | grep "remotes/origin/build" | sort -n | tail -n 1 | cut -d "/" -f 3)
 git checkout $newbuild
 
